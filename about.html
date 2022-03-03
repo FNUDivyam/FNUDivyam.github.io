@@ -1,36 +1,552 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <title>Document</title>
+  <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="megakit,business,company,agency,multipurpose,modern,bootstrap4">
+  
+  <meta name="author" content="themefisher.com">
+
+  <title>Megakit| Html5 Agency template</title>
+
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  <!-- Icon Font Css -->
+  <link rel="stylesheet" href="plugins/themify/css/themify-icons.css">
+  <link rel="stylesheet" href="plugins/fontawesome/css/all.css">
+  <link rel="stylesheet" href="plugins/magnific-popup/dist/magnific-popup.css">
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css">
+  <link rel="stylesheet" href="plugins/slick-carousel/slick/slick-theme.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
 </head>
-<body> 
-<pre>
-  <section class="text-gray-600 body-font">
-    <div class="container px-5 py-24 mx-auto flex flex-wrap">
-      <h2 class="sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5"> fresno city college & web developer  <img src="data:image/png;base64,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" alt=""></h2>
-      <div class="md:w-3/5 md:pl-6">
-        <p class="leading-relaxed text-base"> hello everyone my name is divyam and now i am currently pursuing ssociates in computer information technology ,
-         in computer information technology in web development.
-         Moreover today i have learnt how to link or connect one page to another in this seesion  </p>
-        <div class="flex md:mt-4 mt-6">
 
+<body>
 
-          <a href="About me.html"> Learn more about me </a><br>
-          <a href="education.html"> My life education</a>
-          
-          <a class="text-indigo-500 inline-flex items-center ml-4">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </a>
+<!-- Header Start --> 
+
+<header class="navigation">
+	<div class="header-top ">
+		<div class="container">
+			<div class="row justify-content-between align-items-center">
+				<div class="col-lg-2 col-md-4">
+					<div class="header-top-socials text-center text-lg-left text-md-left">
+						<a href="https://www.facebook.com/themefisher" target="_blank"><i class="ti-facebook"></i></a>
+						<a href="https://twitter.com/themefisher" target="_blank"><i class="ti-twitter"></i></a>
+						<a href="https://github.com/themefisher/" target="_blank"><i class="ti-github"></i></a>
+					</div>
+				</div>
+				<div class="col-lg-10 col-md-8 text-center text-lg-right text-md-right">
+					<div class="header-top-info">
+						<a href="tel:+23-345-67890">Call Us : <span>+23-345-67890</span></a>
+						<a href="mailto:support@gmail.com" ><i class="fa fa-envelope mr-2"></i><span>support@gmail.com</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<nav class="navbar navbar-expand-lg  py-4" id="navbar">
+		<div class="container">
+		  <a class="navbar-brand" href="index.html">
+		  	Mega<span>kit.</span>
+		  </a>
+
+		  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="fa fa-bars"></span>
+		  </button>
+	  
+		  <div class="collapse navbar-collapse text-center" id="navbarsExample09">
+			<ul class="navbar-nav ml-auto">
+			  <li class="nav-item active">
+				<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+			  </li>
+			  <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+					<ul class="dropdown-menu" aria-labelledby="dropdown03">
+						<li><a class="dropdown-item" href="about.html">Our company</a></li>
+						<li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+					</ul>
+			  </li>
+			   <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+			   <li class="nav-item"><a class="nav-link" href="project.html">Portfolio</a></li>
+			   <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+					<ul class="dropdown-menu" aria-labelledby="dropdown05">
+						<li><a class="dropdown-item" href="blog-grid.html">Blog Grid</a></li>
+						<li><a class="dropdown-item" href="blog-sidebar.html">Blog with Sidebar</a></li>
+
+						<li><a class="dropdown-item" href="blog-single.html">Blog Single</a></li>
+					</ul>
+			  </li>
+			   <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+			</ul>
+
+			<form class="form-lg-inline my-2 my-md-0 ml-lg-4 text-center">
+			  <a href="contact.html" class="btn btn-solid-border btn-round-full">Get a Quote</a>
+			</form>
+		  </div>
+		</div>
+	</nav>
+</header>
+
+<!-- Header Close --> 
+
+<div class="main-wrapper ">
+<section class="page-title bg-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block text-center">
+          <span class="text-white">About Us</span>
+          <h1 class="text-capitalize mb-4 text-lg">Our Company</h1>
+          <ul class="list-inline">
+            <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
+            <li class="list-inline-item"><span class="text-white">/</span></li>
+            <li class="list-inline-item"><a href="#" class="text-white-50">About Us</a></li>
+          </ul>
         </div>
       </div>
     </div>
-  </section>
-</pre>
-</body>
-</html>
+  </div>
+</section>
+
+
+<!-- Section About Start -->
+<section class="section about-2 position-relative">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-6">
+				<div class="about-item pr-3 mb-5 mb-lg-0">
+					<span class="h6 text-color">What we are</span>
+					<h2 class="mt-3 mb-4 position-relative content-title">We are dynamic team of creative people</h2>
+					<p class="mb-5">We provide consulting services in the area of IFRS and management reporting, helping companies to reach their highest level. We optimize business processes, making them easier.</p>
+
+					<a href="#" class="btn btn-main btn-round-full">Get started</a>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6">
+				<div class="about-item-img">
+					<img src="images/about/home-7.jpg" alt="" class="img-fluid">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Section About End -->
+ 
+<section class="about-info section pt-0">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="about-info-item mb-4 mb-lg-0">
+					<h3 class="mb-3"><span class="text-color mr-2 text-md ">01.</span>Our Mission</h3>
+					<p>llum similique ducimus accusamus laudantium praesentium, impedit quaerat, itaque maxime sunt deleniti voluptas distinctio .</p>
+				</div>		
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="about-info-item mb-4 mb-lg-0">
+					<h3 class="mb-3"><span class="text-color mr-2 text-md">02.</span>Vission</h3>
+					<p>llum similique ducimus accusamus laudantium praesentium, impedit quaerat, itaque maxime sunt deleniti voluptas distinctio .</p>
+				</div>		
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="about-info-item mb-4 mb-lg-0">
+					<h3 class="mb-3"><span class="text-color mr-2 text-md">03.</span>Our Approach</h3>
+					<p>llum similique ducimus accusamus laudantium praesentium, impedit quaerat, itaque maxime sunt deleniti voluptas distinctio .</p>
+				</div>		
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- section Counter Start -->
+<section class="section counter bg-counter">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-6 col-sm-6">
+				<div class="counter-item text-center mb-5 mb-lg-0">
+					<i class="ti-check color-one text-md"></i>
+					<h3 class="mt-2 mb-0 text-white"><span class="counter-stat font-weight-bold">1730</span> +</h3>
+					<p class="text-white-50">Project Done</p>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-6">
+				<div class="counter-item text-center mb-5 mb-lg-0">
+					<i class="ti-flag color-one text-md"></i>
+					<h3 class="mt-2 mb-0 text-white"><span class="counter-stat font-weight-bold">125 </span>M </h3>
+					<p class="text-white-50">User Worldwide</p>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-6">
+				<div class="counter-item text-center mb-5 mb-lg-0">
+					<i class="ti-layers color-one text-md"></i>
+					<h3 class="mt-2 mb-0 text-white"><span class="counter-stat font-weight-bold">39</span></h3>
+					<p class="text-white-50">Availble Country</p>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-6">
+				<div class="counter-item text-center">
+					<i class="ti-medall color-one  text-md"></i>
+					<h3 class="mt-2 mb-0 text-white"><span class="counter-stat font-weight-bold">14</span></h3>
+					<p class="text-white-50">Award Winner </p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- section Counter End  -->
+<!--  Section Services Start -->
+<section class="section team">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-7 text-center">
+				<div class="section-title">
+					<span class="h6 text-color">Our Team</span>
+					<h2 class="mt-3 content-title">Expert Team member to get best service</h2>
+				</div>
+			</div>
+		</div>
+
+		<div class="row justify-content-center">
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="team-item-wrap mb-5">
+					<div class="team-item position-relative">
+						<img src="images/team/team-1.jpg" alt="" class="img-fluid w-100">
+						<div class="team-img-hover">
+							<ul class="team-social list-inline">
+								<li class="list-inline-item">
+									<a href="#" class="facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<a href="#" class="twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<a href="#" class="instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<a href="#" class="linkedin"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="team-item-content">
+						<h4 class="mt-3 mb-0 text-capitalize">Justin hammer</h4>
+						<p>Digital Marketer</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="team-item-wrap mb-5">
+					<div class="team-item position-relative">
+						<img src="images/team/team-2.jpg" alt="" class="img-fluid w-100">
+						<div class="team-img-hover">
+							<ul class="team-social list-inline">
+								<li class="list-inline-item">
+									<a href="#" class="facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<a href="#" class="twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<a href="#" class="instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<a href="#" class="linkedin"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="team-item-content">
+						<h4 class="mt-3 mb-0 text-capitalize">Jason roy</h4>
+						<p>UI/UX Designer</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="team-item-wrap mb-5 ">
+					<div class="team-item position-relative">
+						<img src="images/team/team-3.jpg" alt="" class="img-fluid w-100">
+						<div class="team-img-hover">
+							<ul class="team-social list-inline">
+								<li class="list-inline-item">
+									<a href="#" class="facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<a href="#" class="twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<a href="#" class="instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<a href="#" class="linkedin"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="team-item-content">
+						<h4 class="mt-3 mb-0 text-capitalize">Henry oswald</h4>
+						<p>Developer</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="team-item-wrap mb-5 mb-lg-0">
+					<div class="team-item position-relative">
+						<img src="images/team/team-4.jpg" alt="" class="img-fluid w-100">
+						<div class="team-img-hover">
+							<ul class="team-social list-inline">
+								<li class="list-inline-item">
+									<a href="#" class="facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<a href="#" class="twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<a href="#" class="instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<a href="#" class="linkedin"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="team-item-content">
+						<h4 class="mt-3 mb-0 text-capitalize">David Williams</h4>
+						<p>Senior Marketer</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="team-item-wrap mb-5 mb-lg-0">
+					<div class="team-item position-relative">
+						<img src="images/team/team-6.jpg" alt="" class="img-fluid w-100">
+						<div class="team-img-hover">
+							<ul class="team-social list-inline">
+								<li class="list-inline-item">
+									<a href="#" class="facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<a href="#" class="twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<a href="#" class="instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<a href="#" class="linkedin"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="team-item-content">
+						<h4 class="mt-3 mb-0 text-capitalize">Peter Odin</h4>
+						<p>App Developer</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="team-item-wrap mb-5 mb-lg-0 ">
+					<div class="team-item position-relative">
+						<img src="images/team/team-5.jpg" alt="" class="img-fluid w-100">
+						<div class="team-img-hover">
+							<ul class="team-social list-inline">
+								<li class="list-inline-item">
+									<a href="#" class="facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<a href="#" class="twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<a href="#" class="instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<a href="#" class="linkedin"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="team-item-content">
+						<h4 class="mt-3 mb-0 text-capitalize">David Spensor</h4>
+						<p>Project Manager</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--  Section Services End -->
+<!-- Section Testimonial Start -->
+<section class="section testimonial bg-gray">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-7 text-center">
+				<div class="section-title">
+					<span class="h6 text-color">Clients testimonial</span>
+					<h2 class="mt-3 content-title">Check what's our clients say about us</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="testimonial-wrap">
+			<div class="testimonial-item position-relative">
+				<i class="ti-quote-left text-color"></i>
+
+				<div class="testimonial-item-content">
+					<p class="testimonial-text">Quam maiores perspiciatis temporibus odio reiciendis error alias debitis atque consequuntur natus iusto recusandae numquam corrupti facilis blanditiis.</p>
+
+					<div class="testimonial-author">
+						<h5 class="mb-0 text-capitalize">Thomas Johnson</h5>
+						<p>Excutive Director,themefisher</p>
+					</div>
+				</div>
+			</div>
+			<div class="testimonial-item position-relative">
+				<i class="ti-quote-left text-color"></i>
+
+				<div class="testimonial-item-content">
+					<p class="testimonial-text">Consectetur adipisicing elit. Quam maiores perspiciatis temporibus odio reiciendis error alias debitis atque consequuntur natus iusto recusandae .</p>
+
+					<div class="testimonial-author">
+						<h5 class="mb-0 text-capitalize">Mickel hussy</h5>
+						<p>Excutive Director,themefisher</p>
+					</div>
+				</div>
+			</div>
+			<div class="testimonial-item position-relative">
+				<i class="ti-quote-left text-color"></i>
+
+				<div class="testimonial-item-content">
+					<p class="testimonial-text">Quam maiores perspiciatis temporibus odio reiciendis error alias debitis atque consequuntur natus iusto recusandae numquam corrupti.</p>
+
+					<div class="testimonial-author">
+						<h5 class="mb-0 text-capitalize">James Watson</h5>
+						<p>Excutive Director,themefisher</p>
+					</div>
+				</div>
+			</div>
+			<div class="testimonial-item position-relative">
+				<i class="ti-quote-left text-color"></i>
+
+				<div class="testimonial-item-content">
+					<p class="testimonial-text">Consectetur adipisicing elit. Quam maiores perspiciatis temporibus odio reiciendis error alias debitis atque consequuntur natus iusto recusandae .</p>
+
+					<div class="testimonial-author">
+						<h5 class="mb-0 text-capitalize">Mickel hussy</h5>
+						<p>Excutive Director,themefisher</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Section Testimonial End -->
+
+<!-- footer Start -->
+<footer class="footer section">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-6 col-sm-6">
+				<div class="widget">
+					<h4 class="text-capitalize mb-4">Company</h4>
+
+					<ul class="list-unstyled footer-menu lh-35">
+						<li><a href="#">Terms & Conditions</a></li>
+						<li><a href="#">Privacy Policy</a></li>
+						<li><a href="#">Support</a></li>
+						<li><a href="#">FAQ</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-2 col-md-6 col-sm-6">
+				<div class="widget">
+					<h4 class="text-capitalize mb-4">Quick Links</h4>
+
+					<ul class="list-unstyled footer-menu lh-35">
+						<li><a href="#">About</a></li>
+						<li><a href="#">Services</a></li>
+						<li><a href="#">Team</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-6">
+				<div class="widget">
+					<h4 class="text-capitalize mb-4">Subscribe Us</h4>
+					<p>Subscribe to get latest news article and resources  </p>
+
+					<form action="#" class="sub-form">
+						<input type="text" class="form-control mb-3" placeholder="Subscribe Now ...">
+						<a href="#" class="btn btn-main btn-small">subscribe</a>
+					</form>
+				</div>
+			</div>
+
+			<div class="col-lg-3 ml-auto col-sm-6">
+				<div class="widget">
+					<div class="logo mb-4">
+						<h3>Mega<span>kit.</span></h3>
+					</div>
+					<h6><a href="tel:+23-345-67890" >Support@megakit.com</a></h6>
+					<a href="mailto:support@gmail.com"><span class="text-color h4">+23-456-6588</span></a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-btm pt-4">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="copyright">
+						&copy; Copyright Reserved to <span class="text-color">Megakit.</span> by <a href="https://themefisher.com/" target="_blank">Themefisher</a>
+					</div>
+				</div>
+				<div class="col-lg-6 text-left text-lg-right">
+					<ul class="list-inline footer-socials">
+						<li class="list-inline-item"><a href="https://www.facebook.com/themefisher"><i class="ti-facebook mr-2"></i>Facebook</a></li>
+						<li class="list-inline-item"><a href="https://twitter.com/themefisher"><i class="ti-twitter mr-2"></i>Twitter</a></li>
+						<li class="list-inline-item"><a href="https://www.pinterest.com/themefisher/"><i class="ti-linkedin mr-2 "></i>Linkedin</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+   
+    </div>
+
+    <!-- 
+    Essential Scripts
+    =====================================-->
+
+    
+    <!-- Main jQuery -->
+    <script src="plugins/jquery/jquery.js"></script>
+    <script src="js/contact.js"></script>
+    <!-- Bootstrap 4.3.1 -->
+    <script src="plugins/bootstrap/js/popper.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+   <!--  Magnific Popup-->
+    <script src="plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+    <!-- Slick Slider -->
+    <script src="plugins/slick-carousel/slick/slick.min.js"></script>
+    <!-- Counterup -->
+    <script src="plugins/counterup/jquery.waypoints.min.js"></script>
+    <script src="plugins/counterup/jquery.counterup.min.js"></script>
+
+    <!-- Google Map -->
+    <script src="plugins/google-map/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>    
+    
+    <script src="js/script.js"></script>
+
+  </body>
+  </html>
